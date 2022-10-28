@@ -1,9 +1,15 @@
 import "./Meme.css";
+import { memesData } from "../../helper/memesData";
 
 const Meme = () => {
+  const getMemeImage = () => {
+    const memesArr = memesData.data.memes;
+    console.log(memesArr[Math.floor(Math.random() * memesArr.length)].url);
+  };
+
   return (
     <main className="meme">
-      <form className="meme-form">
+      <div className="meme-form">
         <div className="meme-inputs">
           <input
             type="text"
@@ -20,10 +26,10 @@ const Meme = () => {
             placeholder="Bottom Text"
           />
         </div>
-        <button type="submit" className="get-meme-btn">
+        <button className="get-meme-btn" onClick={getMemeImage}>
           Get a new meme image
         </button>
-      </form>
+      </div>
     </main>
   );
 };
