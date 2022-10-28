@@ -1,0 +1,24 @@
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  row-gap: 0.5rem;
+  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
+  color: #fff;
+}
+header .meme-generator {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+header .meme-generator .troll-face {
+  width: 50px;
+}
+header .meme-generator .title {
+  font-size: 1.4rem;
+}
+header .course .course-title {
+  font-size: 1.1rem;
+  font-weight: normal;
+}
