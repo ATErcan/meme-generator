@@ -1,9 +1,12 @@
+.meme {
+  padding: 1rem 0.5rem;
+}
 .meme-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 0.5rem;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 .meme-form .meme-inputs {
   display: flex;
@@ -24,4 +27,7 @@
   color: #fff;
   font-family: "Karla", sans-serif;
   border: none;
+}
+.meme .meme-form .meme-img {
+  width: 90%;
 }
