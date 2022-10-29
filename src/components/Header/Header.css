@@ -22,3 +22,45 @@ header .course .course-title {
   font-size: 1.1rem;
   font-weight: normal;
 }
+
+@media screen and (min-width: 576px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    row-gap: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  header {
+    padding: 1.5rem 2rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  header {
+    padding: 2rem 3rem;
+  }
+  header .meme-generator .troll-face {
+    width: 60px;
+  }
+  header .meme-generator .title {
+    font-size: 1.7rem;
+  }
+  header .course .course-title {
+    font-size: 1.3rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  header {
+    padding: 2.2rem 4rem;
+  }
+  header .meme-generator .troll-face {
+    width: 70px;
+  }
+  header .meme-generator .title {
+    font-size: 1.9rem;
+  }
+  header .course .course-title {
+    font-size: 1.5rem;
+  }
+}
