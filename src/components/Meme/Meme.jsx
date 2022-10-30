@@ -1,6 +1,5 @@
 import "./Meme.css";
-import { memesData } from "../../helper/memesData";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Meme = () => {
   const [meme, setMeme] = useState({
@@ -9,12 +8,17 @@ const Meme = () => {
     randomImage: "https://i.imgflip.com/2gnnjh.jpg",
   });
 
-  const [allMemeImgaes, setAllMemeImages] = useState(memesData);
-  // const [memeImage, setMemeImage] = useState("");
+  const [allMemes, setAllMemes] = useState([]);
+  // askdnhask
+
+  useEffect(() => {
+    fetch("https://api.imgflip.com/get_memes")
+      .then((res) => res.json())
+      .then((data) => setAllMemes(data.data.memes));
+  }, []);
 
   const getMemeImage = () => {
-    const memesArr = memesData.data.memes;
-    const randomImg = memesArr[Math.floor(Math.random() * memesArr.length)].url;
+    const randomImg = allMemes[Math.floor(Math.random() * allMemes.length)].url;
     setMeme((prevMeme) => {
       return {
         ...prevMeme,
