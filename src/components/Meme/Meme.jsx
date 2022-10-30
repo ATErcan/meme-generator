@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const Meme = () => {
   const [meme, setMeme] = useState({
-    topTex: "",
+    topText: "",
     bottomText: "",
     randomImage: "https://i.imgflip.com/2gnnjh.jpg",
   });
@@ -23,29 +23,43 @@ const Meme = () => {
     });
   };
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setMeme((prevMeme) => ({
+      ...prevMeme,
+      [name]: value,
+    }));
+  };
+
   return (
     <main className="meme">
       <div className="meme-form">
         <div className="meme-inputs">
           <input
             type="text"
-            name=""
-            id=""
+            name="topText"
             className="meme-input-top"
             placeholder="Top Text"
+            value={meme.topText}
+            onChange={handleChange}
           />
           <input
             type="text"
-            name=""
-            id=""
+            name="bottomText"
             className="meme-input-bot"
             placeholder="Bottom Text"
+            value={meme.bottomText}
+            onChange={handleChange}
           />
         </div>
         <button className="get-meme-btn" onClick={getMemeImage}>
           Get a new meme image
         </button>
-        <img src={meme.randomImage} alt="meme" className="meme-img" />
+        <div className="meme-container">
+          <img src={meme.randomImage} alt="meme" className="meme-img" />
+          <h2 className="top-text">{meme.topText}</h2>
+          <h2 className="bot-text">{meme.bottomText}</h2>
+        </div>
       </div>
     </main>
   );
