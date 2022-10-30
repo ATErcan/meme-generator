@@ -1,5 +1,9 @@
 .meme {
-  padding: 1rem 0.5rem;
+  padding: 1rem 0.5rem 5rem;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .meme-form {
   display: flex;
@@ -29,8 +33,7 @@
   border: none;
 }
 .meme .meme-form .meme-container {
-  border: 3px solid purple;
-  width: 90%;
+  width: 75%;
   position: relative;
   overflow: hidden;
 }
@@ -62,4 +65,13 @@
 }
 .meme .meme-form .meme-container .bot-text {
   bottom: 0;
+}
+
+@media screen and (min-width: 576px) {
+  .meme .meme-form .meme-container {
+    width: 60%;
+  }
+  .meme .meme-form .meme-container h2 {
+    font-size: 1.4rem;
+  }
 }
