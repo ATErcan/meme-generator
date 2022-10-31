@@ -55,10 +55,10 @@ const Meme = () => {
             value={meme.bottomText}
             onChange={handleChange}
           />
+          <button className="get-meme-btn" onClick={getMemeImage}>
+            Get a new meme image
+          </button>
         </div>
-        <button className="get-meme-btn" onClick={getMemeImage}>
-          Get a new meme image
-        </button>
         <div className="meme-container">
           <img src={meme.randomImage} alt="meme" className="meme-img" />
           <h2 className="top-text">{meme.topText}</h2>
